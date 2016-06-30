@@ -48,3 +48,10 @@ airlines2 <- (airlines2 %>% select(DEST, ORIGIN, DEP_DELAY) %>%
 #airlines1 and airlines2 are idential. piping just allows you to more clearly pass values from
 #the previous function onto the next function. notice that we no longer have to specify
 # "airlines2" in the select or filter statements when we pipe.
+
+
+## USING MUTATE
+str(airlines)
+airlines %>% select(DEST, ORIGIN, DEP_DELAY, DISTANCE, AIR_TIME) %>% mutate(mph = DISTANCE/(AIR_TIME/60))
+#need to divide AIR_TIME by 60 in order to get hours.
+#assume distance is already in miles.
