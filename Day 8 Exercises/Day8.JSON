@@ -1,0 +1,27 @@
+{
+  "firstName": "Jan",
+  "lastName": "van der Merwe",
+  "gender": "male",
+  "height": 1.84,
+  "isAlive": true,
+  "age": 63,
+  "address": {
+"streetAddress": "13 Burger Street",
+"city": "Kakamas",
+"state": "Northern Cape",
+"country": "South Africa",
+"postalCode": "8870"
+  },
+  "phoneNumbers": [
+{
+  "type": "home",
+  "number": "054 365 2727"
+},
+{
+  "type": "mobile",
+  "number": "073 239 5730"
+}
+  ],
+  "children": [],
+  "spouse": null
+}
