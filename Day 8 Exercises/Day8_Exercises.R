@@ -25,6 +25,8 @@ str(jsonfile) #a JSON is really just a series of lists
 #Register for an API key on Quandl. Pull in data for the Bitcoin/USD and Bitcoin/EUR exchange 
 #rates. Plot the two time series on the same set of axes.
 
+##You don't technically need the API key here due to the Quandl package.
+##You can also find the JSON links directly from the web, which is what I did here.
 
 usd_json_url <- "https://www.quandl.com/api/v3/datasets/BCHARTS/COINBASEUSD.json"
 usd_json <- fromJSON(usd_json_url)
@@ -77,7 +79,26 @@ lines(eur_df_16$Date, eur_df_16$Close, col = "red") #euro line
 
 # whoops - looks like this wasn't fleshed out. 
 
+library(httr)
+library(jsonlite)
 
+#arthur's API Key - get your own and paste it in
+key <- "a3b976cebee34712885ed92c8cd985a5"
+
+#make sure that you get the URL
+nyt_query_result <- GET("http://api.nytimes.com/svc/search/v2/articlesearch.json", 
+                config = list(apikey = key, q = "Cape Town"))
+
+nyt_json <- content(nyt_query_result) #this is a JSON file
+
+str(nyt_json) #check out the structure
+
+nyt_json$response$docs[[1]]$snippet
+nyt_json$response$docs[[2]]$snippet
+nyt_json$response$docs[[3]]$snippet
+nyt_json$response$docs[[4]]$snippet
+nyt_json$response$docs[[5]]$snippet
+nyt_json$response$docs[[6]]$snippet
 
 # ---------------------------------------------------------------
 # 4)
